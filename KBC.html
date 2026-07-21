@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> <button onclick="f()">Speak</button></div> 
+    
+  
+<script>
+    function f() {
+        
+        
+        const message = new SpeechSynthesisUtterance("Sare jahan se accha hindostan hamara,Hum bulbulain hai iss ki yeh gulsitan hamara.Parbat voh sab se uncha, hamsaya asman ka,Voh santari hamara voh pasban hamara.Godi men khelti hain is ki hazaron nadiya,Gulshan hai jin ke dam se rashk-e-janan hamara.Mazhab nahin sikhata apas men bayr rakhna,Hindi hai ham vatan hai hindostan hamara.");
+
+message.lang = "en-US";  // Indian English
+message.rate = 1;         // Speaking speed
+message.pitch = 1;        // How high or low the voice sounds
+message.volume = 1;       // 0 is silent; 1 is full volume
+
+window.speechSynthesis.speak(message);
+
+
+
+     }
+
+</script>
+
+    
+</body>
+</html>
