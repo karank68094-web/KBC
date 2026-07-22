@@ -1,224 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top, #1e3a8a, #020617 65%),
-                linear-gradient(135deg, #020617, #111827);
-            color: white;
-        }
-
-        .container {
-            min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gayab {
-            display: none;
-
-        }
-    </style>
 </head>
-
 <body>
-    <div class="container">
+    <script>
+        var n=0;
+        var loop;
+     function startcount()
+     {
+        loop=setInterval(f,1000);
+     }
+     function f()
+     {
+        n++;
+        document.getElementById("count").innerHTML=n;
+     }
+        function stopcount()
+        {
+            clearInterval(loop);
+        }
+    </script>
+      
+    outup:<div id="count"></div><br/>
 
-        <div id="divStart">
-            <h1>KBC</h1>
-            <button onclick=" fhide('divStart');fshow('divGame');">Start</button>
-        </div>
-        <div id="divGame" class="gayab">
-            <label id="lblQuestionNumber"></label>
-            <label id="lblQuestion"></label>
+ <input type="button" value="Start counting" onclick="startcount()"><br/>   
+ <input type="button" value="Stop counting" onclick="stopcount()"><br/> 
 
-            <div>
-                <input type="radio" name="option" id="rda">
-                <label id="lbla" for="rda"> "a": "Lucknow",</label>
-            </div>
-
-            <div>
-                <input type="radio" name="option" id="rdb">
-                <label id="lblb" for="rdb"> "b": "Kanpur",</label>
-            </div>
-
-            <div>
-                <input type="radio" name="option" id="rdc">
-                <label id="lblc" for="rdc">"c": "Varanasi",</label>
-            </div>
-
-            <div>
-                <input type="radio" name="option" id="rdd">
-                <label id="lbld" for="rdd"> "d": "Agra",</label>
-            </div>
-            <div style="text-align:center;">
-                <button onclick="nextQuestion()">Submit</button>
-            </div>
-
-
-
-        </div>
-        <script> 
-        let questionno=0;
-        const lblQuestionNumber=document.getElementById("lblQuestionNumber");
-         const lblQuestion=document.getElementById("lblQuestion");
-                function nextQuestion() {
-                // alert(questionno);
-                lblQuestionNumber.textContent=questionno;
-                questionno++;
-                let currentquestion=questions[questionno];
-                lblQuestion.textContent=currentquestion.question;
-                }
-        const questions = [
-               
-                {
-                    "question": "What is the capital of Uttar Pradesh?",
-                    "a": "Lucknow",
-                    "b": "Kanpur",
-                    "c": "Varanasi",
-                    "d": "Agra",
-                    "answer": "a"
-                },
-                {
-                    "question": "What is the capital of Bihar?",
-                    "a": "Gaya",
-                    "b": "Patna",
-                    "c": "Bhagalpur",
-                    "d": "Muzaffarpur",
-                    "answer": "b"
-                },
-                {
-                    "question": "What is the capital of Rajasthan?",
-                    "a": "Jodhpur",
-                    "b": "Udaipur",
-                    "c": "Jaipur",
-                    "d": "Ajmer",
-                    "answer": "c"
-                },
-                {
-                    "question": "What is the capital of Madhya Pradesh?",
-                    "a": "Indore",
-                    "b": "Gwalior",
-                    "c": "Jabalpur",
-                    "d": "Bhopal",
-                    "answer": "d"
-                },
-                {
-                    "question": "What is the capital of Maharashtra?",
-                    "a": "Mumbai",
-                    "b": "Pune",
-                    "c": "Nagpur",
-                    "d": "Nashik",
-                    "answer": "a"
-                },
-                {
-                    "question": "What is the capital of Gujarat?",
-                    "a": "Ahmedabad",
-                    "b": "Gandhinagar",
-                    "c": "Surat",
-                    "d": "Vadodara",
-                    "answer": "b"
-                },
-                {
-                    "question": "What is the capital of West Bengal?",
-                    "a": "Siliguri",
-                    "b": "Howrah",
-                    "c": "Kolkata",
-                    "d": "Durgapur",
-                    "answer": "c"
-                },
-                {
-                    "question": "What is the capital of Tamil Nadu?",
-                    "a": "Madurai",
-                    "b": "Coimbatore",
-                    "c": "Tiruchirappalli",
-                    "d": "Chennai",
-                    "answer": "d"
-                },
-                {
-                    "question": "What is the capital of Karnataka?",
-                    "a": "Bengaluru",
-                    "b": "Mysuru",
-                    "c": "Mangaluru",
-                    "d": "Hubballi",
-                    "answer": "a"
-                },
-                {
-                    "question": "What is the capital of Kerala?",
-                    "a": "Kochi",
-                    "b": "Thiruvananthapuram",
-                    "c": "Kozhikode",
-                    "d": "Thrissur",
-                    "answer": "b"
-                },
-                {
-                    "question": "What is the capital of Punjab?",
-                    "a": "Ludhiana",
-                    "b": "Amritsar",
-                    "c": "Chandigarh",
-                    "d": "Jalandhar",
-                    "answer": "c"
-                },
-                {
-                    "question": "What is the capital of Haryana?",
-                    "a": "Gurugram",
-                    "b": "Faridabad",
-                    "c": "Panipat",
-                    "d": "Chandigarh",
-                    "answer": "d"
-                },
-                {
-                    "question": "What is the capital of Assam?",
-                    "a": "Dispur",
-                    "b": "Guwahati",
-                    "c": "Silchar",
-                    "d": "Dibrugarh",
-                    "answer": "a"
-                },
-                {
-                    "question": "What is the capital of Odisha?",
-                    "a": "Cuttack",
-                    "b": "Bhubaneswar",
-                    "c": "Puri",
-                    "d": "Rourkela",
-                    "answer": "b"
-                },
-                {
-                    "question": "What is the capital of Jharkhand?",
-                    "a": "Jamshedpur",
-                    "b": "Dhanbad",
-                    "c": "Ranchi",
-                    "d": "Bokaro",
-                    "answer": "c"
-                }
-            ];
-          
-            const divstart = document.querySelector("#divStart");
-            const divgame = document.querySelector("#divGame");
-
-            function fshow(id) {
-                document.querySelector(`#${id}`).classList.remove("gayab");
-            }
-            function fhide(id) {
-                document.querySelector(`#${id}`).classList.add("gayab");
-            }
-
-        </script>
+    
+     
 </body>
-
 </html>
