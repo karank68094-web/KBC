@@ -1,143 +1,149 @@
 <style>
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top, #1e3a8a, #020617 65%),
-                linear-gradient(135deg, #020617, #111827);
-            color: white;
-        }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background:
+            radial-gradient(circle at top, #1e3a8a, #020617 65%),
+            linear-gradient(135deg, #020617, #111827);
+        color: white;
+    }
 
-        .container {
-            min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    .container {
+        min-height: 100vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .hide {
-            display: none;
-        }
+    .hide {
+        display: none;
+    }
 
-        .hiddenRadio {
-            visibility: hidden;
-            position: absolute;
-        }
+    .hiddenRadio {
+        visibility: hidden;
+        position: absolute;
+    }
 
-        #divStart,
-        #divGame {
-            width: 95%;
-            max-width: 760px;
-            background: linear-gradient(180deg, #0f172a, #020617);
-            border: 3px solid #facc15;
-            border-radius: 28px;
-            padding: 28px;
-            text-align: center;
-            box-shadow:
-                0 0 25px rgba(250, 204, 21, 0.45),
-                inset 0 0 18px rgba(59, 130, 246, 0.25);
-        }
+    #divStart,
+    #divGame {
+        width: 95%;
+        max-width: 760px;
+        background: linear-gradient(180deg, #0f172a, #020617);
+        border: 3px solid #facc15;
+        border-radius: 28px;
+        padding: 28px;
+        text-align: center;
+        box-shadow:
+            0 0 25px rgba(250, 204, 21, 0.45),
+            inset 0 0 18px rgba(59, 130, 246, 0.25);
+    }
 
-        h1 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            color: #facc15;
-            font-size: 42px;
-            letter-spacing: 2px;
-            text-shadow: 0 0 14px rgba(250, 204, 21, 0.8);
-        }
+    h1 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #facc15;
+        font-size: 42px;
+        letter-spacing: 2px;
+        text-shadow: 0 0 14px rgba(250, 204, 21, 0.8);
+    }
 
-        #lblTimer {
-            display: inline-block;
-            min-width: 58px;
-            margin-left: 10px;
-            padding: 8px 14px;
-            border-radius: 14px;
-            background: #7f1d1d;
-            color: #fecaca;
-            font-size: 30px;
-            font-weight: bold;
-        }
+    #lblTimer {
+        display: inline-block;
+        min-width: 58px;
+        margin-left: 10px;
+        padding: 8px 14px;
+        border-radius: 14px;
+        background: #7f1d1d;
+        color: #fecaca;
+        font-size: 30px;
+        font-weight: bold;
+    }
 
-        #lblReward {
-            display: inline-block;
-            margin-left: 10px;
-            padding: 8px 18px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #facc15, #f97316);
-            color: #111827;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    #lblReward {
+        display: inline-block;
+        margin-left: 10px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #facc15, #f97316);
+        color: #111827;
+        font-size: 24px;
+        font-weight: bold;
+    }
 
-        #lblQuestion {
-            margin: 28px auto;
-            padding: 22px;
-            max-width: 680px;
-            min-height: 90px;
-            background: linear-gradient(180deg, #1e3a8a, #172554);
-            border: 2px solid #93c5fd;
-            border-radius: 22px;
-            color: #ffffff;
-            font-size: 25px;
-            font-weight: bold;
-            line-height: 1.4;
-            text-align: center;
-        }
+    #lblQuestion {
+        margin: 28px auto;
+        padding: 22px;
+        max-width: 680px;
+        min-height: 90px;
+        background: linear-gradient(180deg, #1e3a8a, #172554);
+        border: 2px solid #93c5fd;
+        border-radius: 22px;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 1.4;
+        text-align: center;
+    }
 
-        #divGame>div:not(#lblQuestion) {
-            width: 100%;
-            max-width: 620px;
-            margin: 12px auto;
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(90deg, #1e40af, #1e3a8a);
-            border: 2px solid #60a5fa;
-            border-radius: 999px;
-            color: white;
-            text-align: left;
-        }
+    #divGame>div:not(#lblQuestion) {
+        width: 100%;
+        max-width: 620px;
+        margin: 12px auto;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(90deg, #1e40af, #1e3a8a);
+        border: 2px solid #60a5fa;
+        border-radius: 999px;
+        color: white;
+        text-align: left;
+    }
 
-        input[type="radio"] {
-            width: 20px;
-            height: 20px;
-            accent-color: #facc15;
-            cursor: pointer;
-        }
+    input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #facc15;
+        cursor: pointer;
+    }
 
-        #lbla,
-        #lblb,
-        #lblc,
-        #lbld {
-            flex: 1;
-            font-size: 19px;
-            cursor: pointer;
-        }
+    #lbla,
+    #lblb,
+    #lblc,
+    #lbld {
+        flex: 1;
+        font-size: 19px;
+        cursor: pointer;
+    }
 
-        button {
-            margin: 8px;
-            padding: 12px 22px;
-            border: none;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #facc15, #f97316);
-            color: #111827;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    
-.correct{background:green !important;color:#fff;}
-.wrong{background:red !important;color:#fff;}
+    button {
+        margin: 8px;
+        padding: 12px 22px;
+        border: none;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #facc15, #f97316);
+        color: #111827;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
+    .correct {
+        background: green !important;
+        color: #fff;
+    }
+
+    .wrong {
+        background: red !important;
+        color: #fff;
+    }
 </style>
 </head>
 
@@ -210,7 +216,102 @@
                 "d": "Muzaffarpur",
                 "answer": "b"
             },
-           
+            {
+                "question": "What is the capital of Jharkhand?",
+                "a": "Jamshedpur",
+                "b": "Dhanbad",
+                "c": "Ranchi",
+                "d": "Bokaro",
+                "answer": "c"
+            },
+            {
+                "question": "What is the capital of Madhya Pradesh?",
+                "a": "Indore",
+                "b": "Gwalior",
+                "c": "Jabalpur",
+                "d": "Bhopal",
+                "answer": "d"
+            },
+            {
+                "question": "What is the capital of Maharashtra?",
+                "a": "Mumbai",
+                "b": "Pune",
+                "c": "Nagpur",
+                "d": "Nashik",
+                "answer": "a"
+            },
+            {
+                "question": "What is the capital of Gujarat?",
+                "a": "Ahmedabad",
+                "b": "Gandhinagar",
+                "c": "Surat",
+                "d": "Vadodara",
+                "answer": "b"
+            },
+            {
+                "question": "What is the capital of West Bengal?",
+                "a": "Siliguri",
+                "b": "Howrah",
+                "c": "Kolkata",
+                "d": "Durgapur",
+                "answer": "c"
+            },
+            {
+                "question": "What is the capital of Tamil Nadu?",
+                "a": "Madurai",
+                "b": "Coimbatore",
+                "c": "Tiruchirappalli",
+                "d": "Chennai",
+                "answer": "d"
+            },
+            {
+                "question": "What is the capital of Karnataka?",
+                "a": "Bengaluru",
+                "b": "Mysuru",
+                "c": "Mangaluru",
+                "d": "Hubballi",
+                "answer": "a"
+            },
+            {
+                "question": "What is the capital of Kerala?",
+                "a": "Kochi",
+                "b": "Thiruvananthapuram",
+                "c": "Kozhikode",
+                "d": "Thrissur",
+                "answer": "b"
+            },
+            {
+                "question": "What is the capital of Punjab?",
+                "a": "Ludhiana",
+                "b": "Amritsar",
+                "c": "Chandigarh",
+                "d": "Jalandhar",
+                "answer": "c"
+            },
+            {
+                "question": "What is the capital of Haryana?",
+                "a": "Gurugram",
+                "b": "Faridabad",
+                "c": "Panipat",
+                "d": "Chandigarh",
+                "answer": "d"
+            },
+            {
+                "question": "What is the capital of Assam?",
+                "a": "Dispur",
+                "b": "Guwahati",
+                "c": "Silchar",
+                "d": "Dibrugarh",
+                "answer": "a"
+            },
+            {
+                "question": "What is the capital of Odisha?",
+                "a": "Cuttack",
+                "b": "Bhubaneswar",
+                "c": "Puri",
+                "d": "Rourkela",
+                "answer": "b"
+            },
             {
                 "question": "What is the capital of Jharkhand?",
                 "a": "Jamshedpur",
@@ -221,13 +322,25 @@
             }
         ];
 
+
+
         const rewards = [
             "₹1,000",
             "₹2,000",
             "₹3,000",
             "₹5,000",
             "₹10,000",
-            
+            "₹20,000",
+            "₹40,000",
+            "₹80,000",
+            "₹1,60,000",
+            "₹3,20,000",
+            "₹6,40,000",
+            "₹12,50,000",
+            "₹25,00,000",
+            "₹50,00,000",
+            "₹1 Crore"
+
         ];
 
         const divstart = document.querySelector("#divStart");
@@ -247,10 +360,10 @@
         const lblb = document.querySelector("#lblb");
         const lblc = document.querySelector("#lblc");
         const lbld = document.querySelector("#lbld");
-const optA=rda.parentElement;
-        const optB=rdb.parentElement;
-        const optC=rdc.parentElement;
-        const optD=rdd.parentElement;
+        const optA = rda.parentElement;
+        const optB = rdb.parentElement;
+        const optC = rdc.parentElement;
+        const optD = rdd.parentElement;
 
         let counter = 30;
         let timerId = null;
@@ -271,7 +384,7 @@ const optA=rda.parentElement;
 
             if (rdc.checked) {
                 return "c";
-            
+
             }
 
             if (rdd.checked) {
@@ -281,9 +394,9 @@ const optA=rda.parentElement;
             return "";
         }
 
-        function resetColors(){optA.classList.remove("correct","wrong");optB.classList.remove("correct","wrong");optC.classList.remove("correct","wrong");optD.classList.remove("correct","wrong");}
+        function resetColors() { optA.classList.remove("correct", "wrong"); optB.classList.remove("correct", "wrong"); optC.classList.remove("correct", "wrong"); optD.classList.remove("correct", "wrong"); }
 
-function loadNextQuestion() {
+        function loadNextQuestion() {
             resetColors();
             questionIndex++;
 
@@ -315,17 +428,17 @@ function loadNextQuestion() {
         }
 
         function checkAnswer() {
-            const selectedAnswer=getSelectedAnswer();
-            if(selectedAnswer===""){alert("Please select an answer.");return;}
+            const selectedAnswer = getSelectedAnswer();
+            if (selectedAnswer === "") { alert("Please select an answer."); return; }
             clearInterval(timerId);
-            const correctAnswer=questions[questionIndex].answer;
-            const map={a:optA,b:optB,c:optC,d:optD};
+            const correctAnswer = questions[questionIndex].answer;
+            const map = { a: optA, b: optB, c: optC, d: optD };
             map[correctAnswer].classList.add("correct");
-            if(selectedAnswer!==correctAnswer){
+            if (selectedAnswer !== correctAnswer) {
                 map[selectedAnswer].classList.add("wrong");
-                setTimeout(()=>endKbc("Wrong answer. KBC ended."),2000);
-            }else{
-                setTimeout(()=>loadNextQuestion(),1500);
+                setTimeout(() => endKbc("Wrong answer. KBC ended."), 2000);
+            } else {
+                setTimeout(() => loadNextQuestion(), 1500);
             }
         }
 
